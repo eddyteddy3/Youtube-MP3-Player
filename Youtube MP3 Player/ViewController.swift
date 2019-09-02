@@ -38,7 +38,29 @@ class ViewController: UIViewController {
     
     @IBAction func playVideo(_ sender: Any) {
         
+        guard let url = URL(string: urlLink) else {
+            fatalError("URL not found ")
+        }
+        
+        self.extractYoutubeLink(youtubeLink: url) { (link, error) in
+            guard let url = URL(string: link!) else {
+                fatalError(error!.localizedDescription)
+            }
+        }
+        
+    }
+    
+    func extractYoutubeLink(youtubeLink url: URL, getLink: @escaping (String?, Error?) -> Void) {
+        let extractor = YoutubeDirectLinkExtractor()
+        
+        extractor.extractInfo(for: .url(url), success: { (info) in
+            getLink(info.lowestQualityPlayableLink, nil)
+        }) { (error) in
+            getLink(nil, error)
+        }
+        
     }
     
 }
+
 

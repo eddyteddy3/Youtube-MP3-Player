@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -88,7 +88,6 @@
 				FA04C2966796F3582DD71129 /* Pods-Youtube MP3 Player.debug.xcconfig */,
 				C023D496CAD8C3F1D1EE8FFE /* Pods-Youtube MP3 Player.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
