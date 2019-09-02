@@ -8,6 +8,8 @@
 
 import UIKit
 import WebKit
+import AVFoundation
+import AVKit
 import YoutubeDirectLinkExtractor
 
 class ViewController: UIViewController {
@@ -38,23 +40,38 @@ class ViewController: UIViewController {
     
     @IBAction func playVideo(_ sender: Any) {
         
-        guard let url = URL(string: urlLink) else {
-            fatalError("URL not found ")
+        guard let url = URL(string: textView.text!) else {
+            fatalError("link not found")
         }
+        
+        print(textView.text!)
         
         self.extractYoutubeLink(youtubeLink: url) { (link, error) in
             guard let url = URL(string: link!) else {
                 fatalError(error!.localizedDescription)
             }
+            
+            self.playURL(VideoURL: url)
         }
         
+    }
+    
+    func playURL(VideoURL url: URL) {
+        let player = AVPlayer(url: url)
+        let controller = AVPlayerViewController()
+        
+        controller.player = player
+        
+        present(controller, animated: true) {
+            player.play()
+        }
     }
     
     func extractYoutubeLink(youtubeLink url: URL, getLink: @escaping (String?, Error?) -> Void) {
         let extractor = YoutubeDirectLinkExtractor()
         
         extractor.extractInfo(for: .url(url), success: { (info) in
-            getLink(info.lowestQualityPlayableLink, nil)
+            getLink(info.highestQualityPlayableLink, nil)
         }) { (error) in
             getLink(nil, error)
         }
