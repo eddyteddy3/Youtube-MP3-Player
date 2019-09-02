@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var webView: WKWebView!
     @IBOutlet var textView: UITextField!
     
-    let urlLink = "www.youtube.com"
+    let urlLink = "https://www.youtube.com"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +24,6 @@ class ViewController: UIViewController {
     }
 
     func openLink() {
-        
-        webView = WKWebView()
-        
         guard let url = URL(string: urlLink) else {
             fatalError("URL not found ")
         }
