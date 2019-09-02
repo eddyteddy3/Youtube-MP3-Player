@@ -13,6 +13,7 @@
 		03F8E967231D79DF0095B4C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F8E965231D79DF0095B4C2 /* Main.storyboard */; };
 		03F8E969231D79E20095B4C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F8E968231D79E20095B4C2 /* Assets.xcassets */; };
 		03F8E96C231D79E20095B4C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F8E96A231D79E20095B4C2 /* LaunchScreen.storyboard */; };
+		B5EA18B8587C7CCDCCA187D3 /* Pods_Youtube_MP3_Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1201D337A3B46F1F26A83F13 /* Pods_Youtube_MP3_Player.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		03F8E968231D79E20095B4C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03F8E96B231D79E20095B4C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03F8E96D231D79E20095B4C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1201D337A3B46F1F26A83F13 /* Pods_Youtube_MP3_Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Youtube_MP3_Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C023D496CAD8C3F1D1EE8FFE /* Pods-Youtube MP3 Player.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube MP3 Player.release.xcconfig"; path = "Target Support Files/Pods-Youtube MP3 Player/Pods-Youtube MP3 Player.release.xcconfig"; sourceTree = "<group>"; };
+		FA04C2966796F3582DD71129 /* Pods-Youtube MP3 Player.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube MP3 Player.debug.xcconfig"; path = "Target Support Files/Pods-Youtube MP3 Player/Pods-Youtube MP3 Player.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5EA18B8587C7CCDCCA187D3 /* Pods_Youtube_MP3_Player.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				03F8E95E231D79DF0095B4C2 /* Youtube MP3 Player */,
 				03F8E95D231D79DF0095B4C2 /* Products */,
+				9BDF58DF52137976BCDD11F8 /* Pods */,
+				5AE3DCA8367D1017635E61CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = "Youtube MP3 Player";
 			sourceTree = "<group>";
 		};
+		5AE3DCA8367D1017635E61CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1201D337A3B46F1F26A83F13 /* Pods_Youtube_MP3_Player.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BDF58DF52137976BCDD11F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA04C2966796F3582DD71129 /* Pods-Youtube MP3 Player.debug.xcconfig */,
+				C023D496CAD8C3F1D1EE8FFE /* Pods-Youtube MP3 Player.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03F8E970231D79E20095B4C2 /* Build configuration list for PBXNativeTarget "Youtube MP3 Player" */;
 			buildPhases = (
+				7A8DBC0A347D93F547000EC2 /* [CP] Check Pods Manifest.lock */,
 				03F8E958231D79DF0095B4C2 /* Sources */,
 				03F8E959231D79DF0095B4C2 /* Frameworks */,
 				03F8E95A231D79DF0095B4C2 /* Resources */,
+				844E8EA1C113D3056FA6AD57 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A8DBC0A347D93F547000EC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Youtube MP3 Player-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		844E8EA1C113D3056FA6AD57 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Youtube MP3 Player/Pods-Youtube MP3 Player-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Youtube MP3 Player/Pods-Youtube MP3 Player-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Youtube MP3 Player/Pods-Youtube MP3 Player-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		03F8E958231D79DF0095B4C2 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		03F8E971231D79E20095B4C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA04C2966796F3582DD71129 /* Pods-Youtube MP3 Player.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		03F8E972231D79E20095B4C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C023D496CAD8C3F1D1EE8FFE /* Pods-Youtube MP3 Player.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

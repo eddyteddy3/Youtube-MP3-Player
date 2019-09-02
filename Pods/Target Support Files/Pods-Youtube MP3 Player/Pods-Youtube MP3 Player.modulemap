@@ -1,0 +1,6 @@
+framework module Pods_Youtube_MP3_Player {
+  umbrella header "Pods-Youtube MP3 Player-umbrella.h"
+
+  export *
+  module * { export * }
+}
