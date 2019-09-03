@@ -33,10 +33,11 @@ class ViewController: UIViewController {
         if let myWebView = webView {
             let request = URLRequest(url: url)
             myWebView.load(request)
-            print("loaded URL: \(url)")
         }
         
     }
+    
+    //total length of youtube link is 16 or 17
     
     @IBAction func playVideo(_ sender: Any) {
         
@@ -44,7 +45,12 @@ class ViewController: UIViewController {
             fatalError("link not found")
         }
         
-        print(textView.text!)
+        if let urlString = textView.text {
+            if let range = urlString.remove(at: <#T##String.Index#>){
+                let videoLink = range
+            }
+        }
+        
         
         self.extractYoutubeLink(youtubeLink: url) { (link, error) in
             guard let url = URL(string: link!) else {
