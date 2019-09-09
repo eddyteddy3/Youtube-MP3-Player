@@ -41,23 +41,17 @@ class ViewController: UIViewController {
     
     @IBAction func playVideo(_ sender: Any) {
         
-        guard let url = URL(string: textView.text!) else {
-            fatalError("link not found")
-        }
+        var videoId = textView.text!
+        videoId.removeFirst(17)
         
-        if let urlString = textView.text {
-            if let range = urlString.remove(at: <#T##String.Index#>){
-                let videoLink = range
-            }
-        }
-        
-        
-        self.extractYoutubeLink(youtubeLink: url) { (link, error) in
+        self.extractYoutubeLink(videoID: videoId) { (link, error) in
             guard let url = URL(string: link!) else {
                 fatalError(error!.localizedDescription)
             }
             
-            self.playURL(VideoURL: url)
+            DispatchQueue.main.async {
+                self.playURL(VideoURL: url)
+            }
         }
         
     }
@@ -73,10 +67,10 @@ class ViewController: UIViewController {
         }
     }
     
-    func extractYoutubeLink(youtubeLink url: URL, getLink: @escaping (String?, Error?) -> Void) {
+    func extractYoutubeLink(videoID id: String, getLink: @escaping (String?, Error?) -> Void) {
         let extractor = YoutubeDirectLinkExtractor()
         
-        extractor.extractInfo(for: .url(url), success: { (info) in
+        extractor.extractInfo(for: .id(id), success: { (info) in
             getLink(info.highestQualityPlayableLink, nil)
         }) { (error) in
             getLink(nil, error)

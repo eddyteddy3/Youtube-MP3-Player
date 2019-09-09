@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let audioSession = AVAudioSession()
         do {
-            try audioSession.setCategory(.playback, options: .allowAirPlay)
+            try audioSession.setCategory(.playback, mode: .moviePlayback)
         } catch {
             fatalError("error in audio session")
         }
